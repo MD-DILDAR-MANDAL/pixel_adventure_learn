@@ -13,7 +13,9 @@ class PixelAdventure extends FlameGame {
   Color backgroundColor() => Color(0xFF211F30);
 
   @override
-  FutureOr<void> onLoad() {
+  FutureOr<void> onLoad() async {
+    //loading all sets of images in cache
+    await images.loadAllImages();
     cam = CameraComponent.withFixedResolution(
       world: world,
       width: 640,
